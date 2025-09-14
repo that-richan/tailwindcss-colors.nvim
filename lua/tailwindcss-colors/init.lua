@@ -168,7 +168,7 @@ function M.buf_attach(bufnr)
 
    if not tailwind_lsp_client then
       -- try to find the client
-      local clients = vim.lsp.buf_get_clients(bufnr)
+      local clients = vim.lsp.get_clients { buffer = bufnr }
 
       -- store a reference to the client
       for _, client in pairs(clients) do
